@@ -7,25 +7,32 @@
 <h2>A sub-heading(h2)</h2>
 <h3>A sub-sub-heading(h3) until h6</h3>
 <div>
-<em>text 强调的文本(em)</em>
-    <br />
-<strong>text强烈强调的文本(strong)</strong>
+    <em>text 强调的文本(em)</em>
+    <br/>
+    <strong>text强烈强调的文本(strong)</strong>
 </div>
 <br/>
 <a href="www.baidu.com">百度</a>
 <div>
-<ul>
-    <li>1st item(ul li)<br/></li>
-    <li>2nd item<br/></li>
-    `
-    <li>3rd item<br/></li>
-    <li>4th item<br /></li>
-</ul>
+    <ul>
+        <li>1st item(ul li)<br/></li>
+        <li>2nd item<br/></li>
+        `
+        <li>3rd item<br/></li>
+        <li>4th item<br/></li>
+    </ul>
 </div>
 <div>
-<p>Hi there!</p>
-<p>It works!</p>
+    <p>Hi there!</p>
+    <p>It works!</p>
 </div>
+{% for post in posts %}
+    <div>
+        <p>published:{{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 
 </html>
